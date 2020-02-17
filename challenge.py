@@ -14,7 +14,16 @@ class Challenge:
         for document in self.data:
             self.questions_obj_list.append(NounQuestion(document))
 
+    def check_amount(self):
+        questions_found = len(self.questions_obj_list)
+        if questions_found < self.question_amount:
+            print(f'Questions requested: {self.question_amount}, found only {questions_found}, proceeding!')
+
+    def score(self):
+        pass
+
     def process(self):
+        self.check_amount()
         for question in self.questions_obj_list:
             print(question)
             answer = input('Answer:')
@@ -24,7 +33,7 @@ class Challenge:
                 print('Wrong answer!')
 
 
-challenge1 = Challenge(category='nouns', question_amount=5)
+challenge1 = Challenge(category='nouns', question_amount=2)
 challenge2 = Challenge()
 
-challenge2.process()
+challenge1.process()

@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+import mysecrets
 
 
 def connection(collection_name):
@@ -6,7 +7,7 @@ def connection(collection_name):
         host='23.251.129.52',
         port=27017,
         username="graph_user",
-        password="pass",
+        password=mysecrets.mongodb_password,
         authSource='graph'
     )
 
