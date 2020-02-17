@@ -3,9 +3,9 @@ from etwas import connection
 
 noun_list = [
     {
-        "article": "der",
-        "noun_singular": "Vater",
-        "noun_plural": "Väter"
+        "english": ["child"],
+        "german": ["das Kind"],
+        "polish": ["dziecko"],
     }
 ]
 
