@@ -15,7 +15,9 @@ class Challenge:
         self.answers_list = []
 
         for document in self.data:
-            self.questions_obj_list.append(NounQuestion(document))
+            question_obj = NounQuestion(document)
+            self.questions_obj_list.append(question_obj)
+            self.questions_list.append(question_obj.get_input_question())
 
         self.q_provided = len(self.questions_obj_list)
 
@@ -30,7 +32,7 @@ class Challenge:
         for question in self.questions_obj_list:
             self.questions_list.append(question.get_input_question())
             print(question)
-            answer = input('Answer:')
+            answer = input('Answer: ')
             self.answers_list.append(answer)
             if question.check_answer(answer):
                 print('Correct!')
